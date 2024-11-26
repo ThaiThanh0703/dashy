@@ -18,10 +18,10 @@ pipeline {
 
         stage('SonarQube Analysis') {
             environment {
-                scannerHome = tool 'SonarQube Scanner'
+                scannerHome = tool 'SonarQubeScanner'
             }
             steps{
-                withSonarQubeEnv(SonarQube Scanner) {
+                withSonarQubeEnv(SonarQubeScanner) {
                 sh '''${scannerHome}/bin/sonar-scanner" \
                 -D sonar.projectKey=dashy 
                 -D sonar.sources=./ '''
